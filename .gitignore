@@ -1,5 +1,6 @@
 # Entornos
 .venv/
+.venv311/
 venv/
 __pycache__/
 *.pyc
@@ -14,3 +15,6 @@ __pycache__/
 # Temporales
 .DS_Store
 Thumbs.db
+
+# Evidencia local del entorno (puede contener datos del hardware)
+results/environment/
