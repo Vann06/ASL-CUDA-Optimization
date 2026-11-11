@@ -140,7 +140,7 @@ class TestCNN2Pipeline(unittest.TestCase):
         self.assertFalse(torch.equal(before, model.conv1.weight.detach()))
 
     def test_checkpoint_reproduces_initial_state(self) -> None:
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(dir=ROOT / "results") as temporary:
             checkpoint = Path(temporary) / "initial.pt"
             save_initial_checkpoint(checkpoint, seed=42)
             expected = create_cnn2(seed=42)

@@ -1,6 +1,8 @@
 # Entornos
 .venv/
 .venv311/
+.venv-cpu/
+.venv-cuda/
 venv/
 __pycache__/
 *.pyc
@@ -8,6 +10,8 @@ __pycache__/
 
 # Datos y archivos grandes
 **/data/
+datasets/
+external/
 *.npy
 *.npz
 *.zip
@@ -15,6 +19,16 @@ __pycache__/
 # Temporales
 .DS_Store
 Thumbs.db
+*.tmp
+*.temp
+*.log
+.pytest_cache/
+
+# Resultados generados localmente (el checkpoint canónico sí se versiona)
+results/benchmarks/
+results/benchmarks_smoke/
+results/evidence_local/
+results/train_quick.json
 
 # Evidencia local del entorno (puede contener datos del hardware)
 results/environment/

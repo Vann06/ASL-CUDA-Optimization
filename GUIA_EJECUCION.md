@@ -2,6 +2,8 @@
 
 Esta guía prepara el mismo proyecto para integrantes con solo CPU y para una computadora con GPU NVIDIA. No instala TensorFlow, no descarga datasets y no entrena modelos.
 
+Para la medición oficial en la computadora NVIDIA, la fuente canónica es [`GUIA_NVIDIA.md`](GUIA_NVIDIA.md). Los scripts `setup_cpu.ps1` y `setup_cuda.ps1` crean entornos separados; no use un único `.venv311` para ambas variantes.
+
 ## Versiones fijadas
 
 | Componente | Versión |
@@ -39,21 +41,21 @@ La salida esperada es Python 3.11.x y `64`.
 
 > No reutilice un `.venv` creado con Python 3.10. Un entorno virtual no cambia de versión de Python al actualizar paquetes.
 
-## 2. Crear un entorno limpio
+## 2. Crear entornos limpios
 
 Desde la raíz de `ASL-CUDA-Optimization`:
 
 ```powershell
-py -3.11 -m venv .venv311
-.\.venv311\Scripts\Activate.ps1
-python --version
-python -m pip install --upgrade pip==25.0.1
+.\scripts\setup_cpu.ps1
+# Solo en una computadora NVIDIA:
+.\scripts\setup_cuda.ps1
 ```
 
 Si PowerShell bloquea la activación, se puede ejecutar el Python del entorno directamente:
 
 ```powershell
-.\.venv311\Scripts\python.exe --version
+.\.venv-cpu\Scripts\python.exe --version
+.\.venv-cuda\Scripts\python.exe --version
 ```
 
 ## 3A. Instalación para CPU
@@ -143,7 +145,7 @@ py -0p
 
 ### El entorno sigue usando Python 3.10
 
-Elimine solo el entorno virtual equivocado después de confirmar su ruta y vuelva a crear `.venv311` con `py -3.11`. No modifique el Python del sistema ni `original_lab3/`.
+Elimine solo el entorno virtual equivocado después de confirmar su ruta y vuelva a ejecutar `setup_cpu.ps1` o `setup_cuda.ps1`. No modifique el Python del sistema ni `original_lab3/`.
 
 ### `torch.cuda.is_available()` devuelve `False`
 
@@ -152,14 +154,14 @@ Compruebe, en este orden:
 1. que se instaló `requirements-cuda.txt`, no `requirements-cpu.txt`;
 2. que `python -c "import torch; print(torch.__version__, torch.version.cuda)"` muestre `2.6.0+cu126 12.6`;
 3. que `nvidia-smi` detecte la GPU y muestre el driver;
-4. que el entorno activo sea `.venv311`;
+4. que el comando use `.venv-cuda\Scripts\python.exe`;
 5. que el driver NVIDIA esté actualizado.
 
 No instale paquetes llamados `cuda`, `cudatoolkit` o `pytorch-cuda` con pip para corregir esta instalación: las ruedas oficiales indicadas ya incluyen el runtime que necesitan.
 
 ### Se instaló la variante equivocada de PyTorch
 
-Es más seguro recrear `.venv311`. Si se corrige en el mismo entorno:
+Es más seguro recrear únicamente el entorno equivocado. No mezcle las ruedas CPU y CUDA.
 
 ```powershell
 python -m pip uninstall -y torch torchvision
@@ -240,3 +242,17 @@ Las pruebas unitarias actuales fuerzan el paso de optimización en CPU para mant
 - TensorFlow y PyTorch no comparten RNG ni implementación exacta de interpolación; se conservan rangos, orden, bilinear y reflection padding, pero no se espera igualdad píxel a píxel en augmentation.
 - Se corrigió deliberadamente el contraste para datos normalizados: factor `[0.8,1.2]` y clipping `[0,1]`. El Lab3 dejó el rango predeterminado `[0,255]` en `RandomContrast`.
 - PyTorch cuenta 97,437 parámetros porque las estadísticas móviles de BatchNorm son buffers. Sumadas como hace Keras, el total es 97,885.
+
+## 10. Benchmarks
+
+El sistema de medición está documentado en [`GUIA_BENCHMARK_NVIDIA.md`](GUIA_BENCHMARK_NVIDIA.md). La comparación oficial debe ejecutarse en la misma computadora NVIDIA usando entornos CPU y CUDA separados y el mismo checkpoint.
+
+Antes de cualquier ejecución completa:
+
+```powershell
+python scripts/verify_data.py
+python -m unittest -v tests.test_model tests.test_benchmark
+python scripts/preview_augmentation.py --device cpu
+```
+
+No ejecute las diez épocas si el entorno, los hashes, el smoke test o `pip check` no pasan.

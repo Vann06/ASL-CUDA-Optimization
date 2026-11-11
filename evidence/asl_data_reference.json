@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "description": "Referencia del dataset ASL preparado con seed 42 por original_lab3/src/prepare_asl_data.py.",
+  "source_expectation": {
+    "dataset": "ASL Alphabet, carpeta asl_alphabet_train",
+    "classes": 29,
+    "images_per_class": 3000,
+    "total_source_images": 87000
+  },
+  "preparation": {
+    "seed": 42,
+    "image_size": [64, 64],
+    "block_size": 30,
+    "selected_blocks_per_class": 20,
+    "split_blocks": {"train": 14, "val": 3, "test": 3},
+    "pillow_version": "11.1.0"
+  },
+  "classes": [
+    "a", "b", "c", "d", "del", "e", "f", "g", "h", "i", "j", "k",
+    "l", "m", "n", "nothing", "o", "p", "q", "r", "s", "space", "t",
+    "u", "v", "w", "x", "y", "z"
+  ],
+  "files": {
+    "X_train.npy": {"shape": [12180, 64, 64, 3], "dtype": "uint8", "bytes": 149667968, "sha256": "7C1A4DB3B8EAFA9A64D1A6532CA1E18B62050CCA6B9D226092E6BBA0ABD27093"},
+    "y_train.npy": {"shape": [12180], "dtype": "int64", "bytes": 97568, "sha256": "88184937AF5114629F408702507BB9C4C262E9E43BA46D26F359527FABD26FB0"},
+    "X_val.npy": {"shape": [2610, 64, 64, 3], "dtype": "uint8", "bytes": 32071808, "sha256": "82B58C4FFE185712476139BCA2F048EA602432CA8D3459C0E058C61F53505BC0"},
+    "y_val.npy": {"shape": [2610], "dtype": "int64", "bytes": 21008, "sha256": "1CB483B243C1BACFBD98B9D8ECA40C00199E9C988A1DE70A06176ED7C4DA9013"},
+    "X_test.npy": {"shape": [2610, 64, 64, 3], "dtype": "uint8", "bytes": 32071808, "sha256": "003EF31C2CDD634C3F2EF788634942D64DF4681695F63BD752B6AF6905A30201"},
+    "y_test.npy": {"shape": [2610], "dtype": "int64", "bytes": 21008, "sha256": "1CB483B243C1BACFBD98B9D8ECA40C00199E9C988A1DE70A06176ED7C4DA9013"},
+    "classes.json": {"sha256": "BE298F69DB80D7512ECDABCECED3AEF1921E3EB237000B12659C9C88AED293E3"},
+    "preprocess_meta.json": {"sha256": "B511E44C78CBF78A7A66931176C3785D2A0A36558E4BDEDF7B301E7B479206B0"}
+  }
+}
