@@ -1,10 +1,16 @@
-@"
+# Entornos
 .venv/
+venv/
 __pycache__/
-.ipynb_checkpoints/
 *.pyc
+.ipynb_checkpoints/
+
+# Datos y archivos grandes
 **/data/
 *.npy
 *.npz
 *.zip
-"@ | Set-Content .gitignore
+
+# Temporales
+.DS_Store
+Thumbs.db
