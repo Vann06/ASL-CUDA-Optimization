@@ -1,0 +1,6 @@
+archivo,etiqueta_esperada,CNN2_normal_pred,CNN2_normal_confianza,CNN2_aug_pred,CNN2_aug_confianza,RandomForest_pred,RandomForest_confianza,CNN2_normal_correcto,CNN2_aug_correcto,RandomForest_correcto
+A_test.jpg,a,a,0.6325316429138184,a,0.9730678796768188,b,0.215,True,True,False
+B_test.jpg,b,b,0.4906492829322815,b,0.9208816885948181,a,0.205,True,True,False
+C_test.jpg,c,c,0.9979162812232971,c,0.9999988079071045,c,0.535,True,True,True
+D_test.jpg,d,d,0.951513946056366,d,0.9996832609176636,c,0.225,True,True,False
+E_test.jpg,e,a,0.5893363356590271,e,0.9470846056938171,e,0.34,False,True,True

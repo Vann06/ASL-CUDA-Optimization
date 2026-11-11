@@ -1,0 +1,9 @@
+{
+  "modelo": "CNN2_regularizada",
+  "aug": false,
+  "acc_val": 0.6789271831512451,
+  "acc_test": 0.6134099364280701,
+  "f1_macro": 0.5864438172128095,
+  "params": 97885,
+  "tiempo_entreno_s": 263.5
+}

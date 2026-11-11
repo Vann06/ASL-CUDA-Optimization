@@ -1,0 +1,10 @@
+integrante,modelo,n_fotos,n_letras,letras,accuracy,confianza_media
+Integrante A,CNN2_aug,50,5,"I, J, K, L, R",0.7,0.7597593468427658
+Integrante A,CNN2_normal,50,5,"I, J, K, L, R",0.02,0.6868870007991791
+Integrante A,RandomForest,50,5,"I, J, K, L, R",0.0,0.17
+Integrante B,CNN2_aug,50,5,"M, N, S, U, X",0.18,0.604587365090847
+Integrante B,CNN2_normal,50,5,"M, N, S, U, X",0.16,0.5252971875667573
+Integrante B,RandomForest,50,5,"M, N, S, U, X",0.0,0.1844
+Integrante C,CNN2_aug,50,5,"O, V, W, Y, Z",0.2,0.5766144958138466
+Integrante C,CNN2_normal,50,5,"O, V, W, Y, Z",0.0,0.5944378101825714
+Integrante C,RandomForest,50,5,"O, V, W, Y, Z",0.0,0.2021

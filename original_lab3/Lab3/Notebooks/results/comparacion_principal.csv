@@ -1,0 +1,4 @@
+modelo,familia,augmentation,accuracy_test_recalculada,f1_macro_test_recalculado
+CNN2_aug,CNN,True,0.8490421455938697,0.8486292714293123
+RandomForest_HOG_color,Random Forest,False,0.6593869731800767,0.6495810499906983
+CNN2_regularizada,CNN,False,0.6134099616858237,0.5864438172128095

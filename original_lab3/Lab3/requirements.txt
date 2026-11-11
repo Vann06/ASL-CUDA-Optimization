@@ -1,0 +1,11 @@
+numpy
+pandas
+pillow
+matplotlib
+seaborn
+tqdm
+scikit-learn>=1.7
+joblib>=1.5
+tensorflow>=2.21
+jupyter
+ipykernel

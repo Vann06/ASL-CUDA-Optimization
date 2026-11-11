@@ -1,0 +1,5 @@
+candidate,n_estimators,max_depth,max_features,min_samples_leaf,accuracy_train,accuracy_val,f1_macro_val,tiempo_entreno_s
+RF_200_full_sqrt,200,,sqrt,1,1.0,0.7061302681992337,0.7004390077937567,49.39
+RF_100_depth20_sqrt,100,20.0,sqrt,1,1.0,0.7030651340996169,0.6971348937809971,24.9
+RF_300_depth30_sqrt,300,30.0,sqrt,1,1.0,0.6984674329501915,0.6906506719517215,72.74
+RF_300_full_log2_leaf2,300,,log2,2,1.0,0.6739463601532567,0.665547178025843,17.92

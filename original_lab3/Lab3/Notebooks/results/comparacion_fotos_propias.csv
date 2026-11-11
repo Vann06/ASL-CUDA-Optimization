@@ -1,0 +1,4 @@
+modelo,n_fotos,n_letras,accuracy_fotos_propias,confianza_media
+CNN2_aug,150,15,0.36,0.6469870692491532
+CNN2_normal,150,15,0.06,0.6022073328495026
+RandomForest,150,15,0.0,0.18550000000000003

@@ -1,0 +1,9 @@
+{
+  "modelo": "CNN1_baseline",
+  "aug": false,
+  "acc_val": 0.45019155740737915,
+  "acc_test": 0.4237547814846039,
+  "f1_macro": 0.4123943400062898,
+  "params": 1145693,
+  "tiempo_entreno_s": 103.4
+}

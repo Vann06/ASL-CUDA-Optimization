@@ -1,0 +1,9 @@
+{
+  "modelo": "FC",
+  "aug": false,
+  "acc_val": 0.15785440802574158,
+  "acc_test": 0.10613026469945908,
+  "f1_macro": 0.0755934300289415,
+  "params": 6430749,
+  "tiempo_entreno_s": 290.9
+}

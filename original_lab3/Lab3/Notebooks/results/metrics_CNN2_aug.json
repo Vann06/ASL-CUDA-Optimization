@@ -1,0 +1,9 @@
+{
+  "modelo": "CNN2_aug",
+  "aug": true,
+  "acc_val": 0.8318007588386536,
+  "acc_test": 0.8490421175956726,
+  "f1_macro": 0.8486292714293123,
+  "params": 97885,
+  "tiempo_entreno_s": 664.6
+}
