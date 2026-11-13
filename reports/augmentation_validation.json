@@ -1,6 +1,6 @@
 {
-  "python": "3.13.7",
-  "torch": "2.13.0+cpu",
+  "python": "3.11.9",
+  "torch": "2.6.0+cpu",
   "device": "cpu",
   "seed": 42,
   "output": "reports/augmentation_preview_pytorch.png",

@@ -23,6 +23,10 @@ function Assert-LatestSmoke([string]$Device, [string]$Python) {
 function Invoke-Full([string]$Device, [string]$Python) {
     $Base = "results/benchmarks/$Device"
     $Log = "results/environment/full-$Device-console.log"
+    # Windows PowerShell 5.1 convierte cada línea de stderr redirigida (logging de
+    # Python) en un error terminante cuando ErrorActionPreference es Stop.
+    # El éxito se decide por $LASTEXITCODE, así que aquí se relaja solo en esta función.
+    $ErrorActionPreference = "Continue"
     & $Python -m src.benchmark --device $Device --epochs 10 --batch-size 32 --repetitions 3 --num-workers 0 --seed 42 --warmup-batches 2 --output-dir $Base 2>&1 | Tee-Object -FilePath $Log
     if ($LASTEXITCODE -ne 0) { throw "El benchmark oficial $Device falló. Revise $Log y error.json." }
     $Latest = Get-ChildItem $Base -Directory | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
