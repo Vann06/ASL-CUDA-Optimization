@@ -3,6 +3,7 @@
 .venv311/
 .venv-cpu/
 .venv-cuda/
+.venv-numba/
 venv/
 __pycache__/
 *.pyc
@@ -28,6 +29,7 @@ Thumbs.db
 results/benchmarks/
 results/benchmarks_smoke/
 results/evidence_local/
+results/kernel_numba/
 results/train_quick.json
 
 # Evidencia local del entorno (puede contener datos del hardware)

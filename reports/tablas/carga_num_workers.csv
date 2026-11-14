@@ -1,0 +1,4 @@
+num_workers,arranque_1er_batch_s,resto_de_la_época_s,época_completa_s,speedup_régimen,speedup_con_arranque
+0,0.0,1.2,1.21,1.0,1.0
+2,4.35,0.94,5.29,1.28,0.23
+4,5.48,0.67,6.15,1.8,0.2

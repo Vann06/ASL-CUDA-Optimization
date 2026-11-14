@@ -1,0 +1,14 @@
+# Entorno aparte para los kernels CUDA escritos a mano (CUDA Python con Numba).
+# No incluye PyTorch: no modifica los entornos de los benchmarks oficiales.
+# numba 0.61 usa su target CUDA integrado; numba-cuda >= 0.18 depende de cuda.core,
+# cuya DLL bloquea el Control inteligente de aplicaciones de Windows 11.
+numpy==1.26.4
+numba==0.61.2
+llvmlite==0.44.0
+nvidia-cuda-nvcc-cu12==12.6.85
+nvidia-cuda-runtime-cu12==12.6.77
+pandas==3.0.6
+matplotlib==3.11.2
+ipykernel==7.4.0
+nbconvert==7.17.2
+nbformat==5.11.1
